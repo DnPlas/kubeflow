@@ -59,7 +59,7 @@ local ROLE_WORKER = "worker";
       emptyDir: {},
     },
     {
-      name: "openmpi-secrets",
+      name: "openmpi-secret",
       secret: {
         secretName: params.secret,
         defaultMode: 256,  // 0400
@@ -130,7 +130,7 @@ local ROLE_WORKER = "worker";
           mountPath: "/kubeflow/openmpi/assets",
         },
         {
-          name: "openmpi-secrets",
+          name: "openmpi-secret",
           mountPath: "/kubeflow/openmpi/secrets",
         },
       ] + params.volumeMounts,
