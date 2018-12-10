@@ -1,4 +1,4 @@
-set -exv
+#set -exv
 
 OPENMPI_DIR=/kubeflow/openmpi
 SSHD_CONFIG=${OPENMPI_DIR}/assets/sshd_config
@@ -7,7 +7,6 @@ BACKOFF_SECS=10
 TIMEOUT_EXIT_CODE=124
 
 run_by_non_root() {
-#  echo "HELLO"
   [ "$(id -u)" != "0" ]
 }
 
