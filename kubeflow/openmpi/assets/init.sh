@@ -1,4 +1,4 @@
-#set -exv
+set -exv
 
 OPENMPI_DIR=/kubeflow/openmpi
 SSHD_CONFIG=${OPENMPI_DIR}/assets/sshd_config
