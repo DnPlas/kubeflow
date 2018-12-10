@@ -7,7 +7,8 @@ BACKOFF_SECS=10
 TIMEOUT_EXIT_CODE=124
 
 run_by_non_root() {
-  [ "$(id -u)" != "0" ]
+    echo "Hello"
+#  [ "$(id -u)" != "0" ]
 }
 
 wait_mpi_ready() {
