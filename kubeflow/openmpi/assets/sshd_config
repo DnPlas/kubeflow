@@ -2,43 +2,42 @@
 # See the sshd_config(5) manpage for details
 
 # What ports, IPs and protocols we listen for
-#Port 2022
-Port 22
+Port 2022
 # Use these options to restrict which interfaces/protocols sshd will bind to
 #ListenAddress ::
 #ListenAddress 0.0.0.0
 Protocol 2
 
 #Privilege Separation is turned on for security
-#UsePrivilegeSeparation no
+UsePrivilegeSeparation no
 
 # Lifetime and size of ephemeral version 1 server key
-#KeyRegenerationInterval 3600
-#ServerKeyBits 768
+KeyRegenerationInterval 3600
+ServerKeyBits 768
 
 # Logging
 SyslogFacility AUTH
-LogLevel VERBOSE
+LogLevel INFO
 
 # Authentication:
 LoginGraceTime 120
 PermitRootLogin yes
 StrictModes yes
 
-#RSAAuthentication yes
+RSAAuthentication yes
 PubkeyAuthentication yes
 
 # Don't read the user's ~/.rhosts and ~/.shosts files
 IgnoreRhosts yes
 # For this to work you will also need host keys in /etc/ssh_known_hosts
-#RhostsRSAAuthentication no
+RhostsRSAAuthentication no
 # similar for protocol version 2
 HostbasedAuthentication no
 # Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
 #IgnoreUserKnownHosts yes
 
 # To enable empty passwords, change to yes (NOT RECOMMENDED)
-PermitEmptyPasswords yes
+PermitEmptyPasswords no
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
@@ -47,7 +46,7 @@ ChallengeResponseAuthentication no
 X11Forwarding yes
 X11DisplayOffset 10
 PrintMotd no
-#PrintLastLog yes
+PrintLastLog yes
 TCPKeepAlive yes
 #UseLogin no
 
@@ -65,9 +64,7 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-UsePAM no 
-PermitRootLogin prohibit-password
-PasswordAuthentication no
+UsePAM no
 
 # Enabling environment processing may enable users to bypass access
 # restrictions in some configurations using mechanisms such as LD_PRELOAD.
