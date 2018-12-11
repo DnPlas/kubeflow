@@ -65,7 +65,7 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-UsePAM no
+UsePAM yes 
 
 # Enabling environment processing may enable users to bypass access
 # restrictions in some configurations using mechanisms such as LD_PRELOAD.
