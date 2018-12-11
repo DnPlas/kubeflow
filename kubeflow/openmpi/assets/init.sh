@@ -89,7 +89,7 @@ else
   wait_controller_signal SIGCONT ${max_retries}
 
   # Start sshd in daemon mode
-  /usr/sbin/sshd -e -f ${SSHD_CONFIG}
+  /usr/sbin/sshd -e #-f ${SSHD_CONFIG}
 
   # Block forever until controller terminates.
   wait_controller_signal SIGTERM
