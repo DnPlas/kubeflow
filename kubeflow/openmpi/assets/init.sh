@@ -52,6 +52,7 @@ timeout_secs="$4"
 max_retries=$(expr ${timeout_secs} / ${BACKOFF_SECS})
 
 # Set up openmpi
+HOME=/root
 mkdir -p ${HOME}/.openmpi
 cp ${OPENMPI_DIR}/assets/mca-params.conf ${HOME}/.openmpi
 
