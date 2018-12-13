@@ -55,6 +55,11 @@ max_retries=$(expr ${timeout_secs} / ${BACKOFF_SECS})
 mkdir -p ${HOME}/.openmpi
 cp ${OPENMPI_DIR}/assets/mca-params.conf ${HOME}/.openmpi
 
+# Set up ssh keys
+/usr/sbin/ssh-keygen -A
+
+mkdir -p /var/run/sshd
+
 # Set up ssh
 mkdir -p ${HOME}/.ssh
 cp ${OPENMPI_DIR}/secrets/id_rsa ${HOME}/.ssh
